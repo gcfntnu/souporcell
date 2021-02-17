@@ -163,10 +163,10 @@ else:
     args.ploidy = 2
 import os
 import pickle
-sm = pickle.load(open(os.path.realpath(__file__)[0:-12]+"stan_consensus.pickle",'rb'))
-#sm = pystan.StanModel(model_code=cell_genotype_consensus)
-#with open("stan_consensus.pickle",'wb') as model:
-#    pickle.dump(sm, model)
+#sm = pickle.load(open(os.path.realpath(__file__)[0:-12]+"stan_consensus.pickle",'rb'))
+sm = pystan.StanModel(model_code=cell_genotype_consensus)
+with open("stan_consensus.pickle",'wb') as model:
+    pickle.dump(sm, model)
 #assert False
 from scipy.special import logsumexp
 
